@@ -16,7 +16,7 @@ class FRCNN(nn.Module):
         super(FRCNN, self).__init__()
         self.mode = mode
 
-    def get_data_loader(self, root_dir='utils/data/voc/VOCdevkit/VOC2012', batch_size=2, shuffule=True):
+    def get_data_loader(self, root_dir='data/voc/VOCdevkit/VOC2012', batch_size=2, shuffule=True):
         vocdata= voc_data(root_dir, self.mode)
         self.data_loader = DataLoader(vocdata, batch_size, shuffule)
         

@@ -45,7 +45,7 @@ class voc_data(Dataset):
         self.new_size = new_size
 
         self.img_list = []
-        with open('/home/juniorliu/projects/my_faster_rcnn/utils/data/voc/VOCdevkit/VOC2012/ImageSets/Main/aeroplane_{}.txt'.format(mode), 'r') as f:
+        with open(os.path.join(root_dir, 'ImageSets/Main/aeroplane_{}.txt'.format(mode)), 'r') as f:
             lines = f.readlines()
             for line in lines:
                 self.img_list.append(line.split()[0])

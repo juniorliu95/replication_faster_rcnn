@@ -95,6 +95,7 @@ class trainer(nn.Module):
             label = labels[i] # [32]
             true_ind = label!=-1
             box = boxes[i, true_ind, :] # [32, 4]
+            label = label[true_ind] # 32
             
             # sample_roi:[n_sample, 4], reg_target_classifier:[n_sample, 4], cls_label_classifier:[n_sample,]
             sample_roi, reg_target_classifier, cls_label_classifier = self.pt(roi, box, label)
